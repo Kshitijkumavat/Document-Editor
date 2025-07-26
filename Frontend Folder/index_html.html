@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatFlow - Real-time Chat Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- User Join Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-comments"></i>
+                <h2>Join ChatFlow</h2>
+                <p>Enter your name to start chatting with others</p>
+            </div>
+            
+            <div class="modal-body">
+                <input type="text" id="usernameInput" placeholder="Your display name" maxlength="25" autofocus>
+                <button id="joinBtn" class="join-btn">Start Chatting</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Chat Interface -->
+    <div id="chatContainer" class="chat-container hidden">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-info">
+                    <i class="fas fa-comments"></i>
+                    <h1>ChatFlow</h1>
+                </div>
+                
+                <div class="connection-status">
+                    <i id="connectionIcon" class="fas fa-wifi"></i>
+                    <span id="connectionText">Connected</span>
+                </div>
+            </div>
+
+            <div class="users-section">
+                <div class="section-header">
+                    <i class="fas fa-users"></i>
+                    <span>Online (<span id="userCount">0</span>)</span>
+                </div>
+            </div>
+
+            <div class="users-list" id="usersList">
+                <!-- Online users will be populated here -->
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-chat">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-info">
+                    <h2>General Chat</h2>
+                    <p>Welcome back, <span id="currentUsername"></span>!</p>
+                </div>
+                
+                <div id="typingIndicator" class="typing-indicator hidden">
+                    <span id="typingText"></span>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Messages will be populated here -->
+            </div>
+
+            <!-- Message Input -->
+            <div class="message-input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Type your message here..." 
+                        rows="1"
+                    ></textarea>
+                    
+                    <button id="sendBtn" class="send-btn" disabled>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Socket.IO CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

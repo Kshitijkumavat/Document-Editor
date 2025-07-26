@@ -1,0 +1,33 @@
+{
+  "name": "chatflow-app",
+  "version": "1.0.0",
+  "description": "Real-time chat application with Socket.IO, Express, and MongoDB",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install-backend": "cd backend && npm install",
+    "install-all": "npm run install-backend",
+    "build": "echo 'No build step required for this setup'",
+    "test": "cd backend && npm test"
+  },
+  "keywords": [
+    "chat",
+    "real-time",
+    "socket.io",
+    "express",
+    "mongodb",
+    "javascript",
+    "websocket"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/chatflow-app.git"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
